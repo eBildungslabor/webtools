@@ -1,0 +1,36 @@
+<!doctype html>
+<html lang="de">
+  <head>
+    <meta charset="utf-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>{{ pageTitle or siteData.name }}</title>
+    <link href="/css/style.css" rel="stylesheet">
+    <link href="https://fonts.googleapis.com/css?family=Roboto+Mono:400,700&display=swap" rel="stylesheet">
+  </head>
+  <body>
+    {{ content | safe }}
+    
+    <h2>📖 Inhalte und Anleitungen</h2>
+    <ul>
+      {%- for post in collections.posts -%}
+        <li><a href="{{ post.url }}">{{ post.data.title }}</a></li>
+      {%- endfor -%}
+    </ul>
+    
+    <h2>🔗 Wichtige externe Links</h2>
+    <ul class="no-bullet"> 
+     <li><a href="https://yopad.eu/p/webtools_kollaborativ_lama#">📝 Zur kollaborativen Schreibumgebung</a></li>    
+      <li><a href="mailto:support@ebildungslabor.de">📩 Mail bei Fragen</a></li>    
+    </ul>
+
+  
+   <footer>
+  Erstellt im <a href="https://ebildungslabor.de">eBildungslabor</a>. Alle Inhalte sind freigegeben unter <a href="https://creativecommons.org/publicdomain/zero/1.0/deed.en">CC0 1.0</a>. 
+  - Design und Technik basierend auf einer Vorlage von <a href="https://twitter.com/notwaldorf">Monica</a> und <a href="https://twitter.com/jllord">Jessica</a>. 
+  <br>Wenn Du Dein eigenes Lern-Angebot gestalten willst, dann klicke den folgenden Button: <a class="glitch-remix" href="https://glitch.com/edit/#!/remix/onlinelernangebot-muster">
+  <img alt="Remix on Glitch" src="https://cdn.gomix.com/f3620a78-0ad3-4f81-a271-c8a4faa20f86%2Fremix-button.svg">
+</a>
+     
+    </footer>
+  </body>
+</html>
